@@ -21,7 +21,6 @@ class NotesService {
 
     const result = await this._pool.query(query);
 
-    console.log(result.rows[0].id);
     if (!result.rows[0].id) {
       throw new InvariantError("Catatan gagal ditambahkan");
     }
@@ -56,7 +55,7 @@ class NotesService {
     };
 
     const result = await this._pool.query(query);
-
+    console.log(result.length);
     if (!result.rows.length) {
       throw new NotFoundError("Gagal memperbarui catatan. Id tidak ditemukan");
     }
