@@ -18,7 +18,7 @@ class AuthenticationsHandler {
       // cek validasi
       this._validator.validatePostAuthenticationPayload(request.payload);
 
-      //   cek username dan password
+      // cek username dan password
       const { username, password } = request.payload;
       const id = await this._usersService.verifyUserCredential(
         username,
